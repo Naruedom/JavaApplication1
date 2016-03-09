@@ -15,7 +15,7 @@ public class Trainer extends javax.swing.JFrame {
         initComponents();
         URL iconURL = getClass().getResource("pool.png"); 
         ImageIcon icon = new ImageIcon(iconURL);
-         this.setIconImage(icon.getImage());
+         this.setIconImage(icon.getImage()); 
     }
 
      

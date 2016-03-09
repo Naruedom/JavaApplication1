@@ -4,12 +4,13 @@ import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException; 
 import javax.swing.ImageIcon;
+import javax.swing.UIManager;
 import static p1.cnn.Select;
 
 public class login1 extends javax.swing.JFrame {
 
     public login1() {
-        initComponents();
+        initComponents(); 
         Error.setText("");
         URL iconURL = getClass().getResource("pool.png"); 
         ImageIcon icon = new ImageIcon(iconURL);
@@ -124,8 +125,17 @@ public class login1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
+        
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
+            
             public void run() {
+                 try 
+    { 
+        UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel"); 
+    } 
+    catch(Exception e){ 
+    }
                 new login1().setVisible(true);
             }
         });
