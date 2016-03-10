@@ -8,6 +8,8 @@ import java.util.Calendar;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
 import static p1.Function.checknumber; 
+import static p1.Myfunction.getToday;
+import static p1.Myfunction.todate;
 import static p1.cnn.Sql2;
 import static p1.cnn.cn;
  
@@ -275,10 +277,14 @@ public class C2 extends javax.swing.JFrame {
              
              while(rs2.next()) {
                        name = rs2.getString("u_name"); 
-                       Age  = rs2.getString("u_age");
+                       //Age  = rs2.getString("u_age");
                        User = rs2.getString("u_type");
-                age = Integer.parseInt(rs2.getString("u_age"));
-                
+                       // age = rs2.getInt("u_age") ;
+                        BD  = rs2.getString("U_birth") ;
+                     
+                        age  = getToday().getYear() -  todate(BD).getYear() ;
+                        Age  = ""+age;
+                        
                 jLabel1.setText(  "ชื่อ :" + name);
              //   System.out.print(age);
                 
@@ -376,6 +382,7 @@ public class C2 extends javax.swing.JFrame {
         private javax.swing.JTextField txtObjectB;
         private javax.swing.JList ListB;
         public int age = 0 ;  
+        public String  BD = null ;
         public int statusInclss ;
         String  rid = "";
         String rid2;

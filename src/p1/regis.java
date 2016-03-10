@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -13,6 +14,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.border.LineBorder;
 import static p1.Function.checknumber;
+import static p1.Myfunction.getToday;
+import static p1.Myfunction.todate;
 import static p1.cnn.Sql;
 import static p1.cnn.cn3;
 
@@ -20,11 +23,22 @@ import static p1.cnn.cn3;
 public class regis extends javax.swing.JFrame {
 
  
+   
+    
     public regis() {
         initComponents(); 
         U_address.setLineWrap(true); 
-        datetext.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
-        String s = datetext.getText();
+        
+         datetext.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
+       // String bd = datetext.getText();
+         
+        
+         /*
+   
+    int  ot = getToday().getYear() -  todate(bd).getYear() ;
+     
+        System.out.println("OUTput :"+ot);
+                */
         //System.out.println("-"+s+"-");
         // DateFormat  s= datetext.getDateFormat();
        
@@ -240,9 +254,9 @@ public class regis extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(jLabel5))
             .addGap(34, 34, 34)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(40, 40, 40))
     );
 

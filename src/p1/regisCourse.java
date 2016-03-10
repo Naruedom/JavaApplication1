@@ -17,6 +17,8 @@ import javax.swing.JOptionPane;
 import javax.swing.border.LineBorder;
 import static p1.Function.checkid;
 import static p1.Function.checknumber; 
+import static p1.Myfunction.getToday;
+import static p1.Myfunction.todate;
 import static p1.cnn.Sql;
 import static p1.cnn.cn;
 
@@ -26,8 +28,7 @@ import static p1.cnn.cn;
  */
 public class regisCourse extends javax.swing.JFrame {
     public regisCourse() {
-        initComponents();
-        jButton2.setVisible(false);
+        initComponents(); 
     }
 
     @SuppressWarnings("unchecked")
@@ -49,7 +50,7 @@ public class regisCourse extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,6 +73,7 @@ public class regisCourse extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Angsana New", 1, 18)); // NOI18N
         jLabel8.setText("รหัสสมาชิก");
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton1.setText("สมัคร");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -105,10 +107,11 @@ public class regisCourse extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
         jLabel13.setText("สมัครเรียนคอร์สว่ายนํ้า");
 
-        jButton2.setText("กลับ");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton3.setText("ยกเลิก");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
             }
         });
 
@@ -150,12 +153,12 @@ public class regisCourse extends javax.swing.JFrame {
                             .addComponent(jLabel11)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(73, 73, 73)
-                                .addComponent(jButton1)))
-                        .addGap(44, 44, 44)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
-                            .addComponent(jLabel12))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel12)))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,11 +190,11 @@ public class regisCourse extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(jLabel12))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addGap(20, 20, 20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         pack();
@@ -246,8 +249,7 @@ public class regisCourse extends javax.swing.JFrame {
                 }             
         } catch (Exception ex) { System.out.println("excep error.");  return; }
             
-           
-                       
+          
           
              ResultSet rs2 = null; 
         try {
@@ -259,9 +261,13 @@ public class regisCourse extends javax.swing.JFrame {
         try {
             while(rs2.next()) {
                 Name = rs2.getString("u_name");
-                Age  = rs2.getString("u_age");
+                BD  = rs2.getString("U_birth") ;
+                     
+                        age  = getToday().getYear() -  todate(BD).getYear() ;
+                        Age  = age+"";
+                //Age  = rs2.getString("u_age");
                 
-                age = Integer.parseInt(rs2.getString("u_age"));
+               // age = Integer.parseInt(rs2.getString("u_age"));
                 
                 jLabel10.setText(Name);
                 
@@ -322,12 +328,9 @@ public class regisCourse extends javax.swing.JFrame {
    
     }//GEN-LAST:event_jButton1MouseClicked
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        
-     Page1 formPage1 = new Page1();   
-            setVisible(false);
-            formPage1.setVisible(true);
-    }//GEN-LAST:event_jButton2MouseClicked
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -367,11 +370,12 @@ String uid;
 String cid;
 public int age = 0 ; 
  String Age ;
+ String BD;
  String Name;
  String tn;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
