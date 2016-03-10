@@ -9,23 +9,30 @@ import java.sql.Statement;
 
 public class cnn  { 
     
+    static String host = "jdbc:mysql://localhost/db?useUnicode=true&characterEncoding=UTF-8"; 
+   
+     public static void main(String[] a) throws SQLException{
+          try {  
+            ResultSet rs = cn().executeQuery("SELECT * FROM staff");  
+            while (rs.next()) {
+                String name = rs.getString("sf_name"); 
+                System.out.println(name ); 
+             } 
+        } catch (Exception ex) { System.err.println("error conect."); }        
+        }///////////////////////////////////////////////////////      
+     public static Statement  cn() throws SQLException {  //i 
+            Connection cnn = DriverManager.getConnection(host,"root",""); 
+            Statement stmt = cnn.createStatement(); 
+            return stmt; 
+        } 
      
-    
-     public static Statement  cn() throws SQLException {  //i
-            String host = "jdbc:mysql://localhost/db?useUnicode=true&characterEncoding=UTF-8"; 
-            Connection cnn = DriverManager.getConnection(host,"root",""); 
+          public static Statement  cn2() throws SQLException { //c 
+            Connection cnn = DriverManager.getConnection(host,"cashier","1234"); 
             Statement stmt = cnn.createStatement(); 
             return stmt; 
         }  
-          public static Statement  cn2() throws SQLException { //c
-            String host = "jdbc:mysql://localhost/db?useUnicode=true&characterEncoding=UTF-8"; 
-            Connection cnn = DriverManager.getConnection(host,"root",""); 
-            Statement stmt = cnn.createStatement(); 
-            return stmt; 
-        }  
-             public static Statement  cn3() throws SQLException { //a
-            String host = "jdbc:mysql://localhost/db?useUnicode=true&characterEncoding=UTF-8"; 
-            Connection cnn = DriverManager.getConnection(host,"root",""); 
+             public static Statement  cn3() throws SQLException { //a 
+            Connection cnn = DriverManager.getConnection(host,"adminswim","1234"); 
             Statement stmt = cnn.createStatement(); 
             return stmt; 
         } 
@@ -46,24 +53,7 @@ public class cnn  {
           return cn().executeQuery(x); 
      }
 
-     public static void main(String[] a) throws SQLException{
-         
-         /*  try {   
-            
-            ResultSet rs = cn().executeQuery("SELECT * FROM staff");  
-            while (rs.next()) {
-                String name = rs.getString("sf_name");
-                //String mail = rs.getString("u_email");
-                System.out.println(name ); 
-             }
-             
-        } catch (Exception ex) {
-            System.err.println("error conect.");
-       }*/
-         
-           Sql("UPDATE `register` SET `R_hour` = (SELECT ADDTIME( '10:00:10', '-00:00:09' )) WHERE `u_id` = '564259130';");
-   
-     }
+    
 
     
      

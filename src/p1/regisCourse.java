@@ -28,7 +28,8 @@ import static p1.cnn.cn;
  */
 public class regisCourse extends javax.swing.JFrame {
     public regisCourse() {
-        initComponents(); 
+        initComponents();  
+       
     }
 
     @SuppressWarnings("unchecked")
@@ -204,10 +205,7 @@ public class regisCourse extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         
-    /*     if(jTextField1.getText().equals("")){
-           
-        }
-        */
+  
          
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -217,12 +215,7 @@ public class regisCourse extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
        
-        /*    C2 form2 = new C2();  
-            form2.setLinkObj(jTextField1,0,jComboBox1.getSelectedItem().toString());  
-            setVisible(false);
-            //form2.setDefaultCloseOperation(C1.HIDE_ON_CLOSE); 
-            form2.setVisible(true);    
-        */
+     
            String input = jTextField1.getText();
            
            tn =  "นายสงขลา บุญช่วย";
@@ -230,53 +223,41 @@ public class regisCourse extends javax.swing.JFrame {
            
          if(input.equals("")  ){
           JOptionPane.showMessageDialog(this, "กรุณากรอก ID ","Inane warning",JOptionPane.WARNING_MESSAGE ); 
-          return;
-         }
-         
+          return; } 
           if(  !input.equals("") && !checkid( input )  )
-        {
-        JOptionPane.showMessageDialog(this, "ใส่ตัวเลข 9 หลักเท่านั้น","Inane warning",JOptionPane.WARNING_MESSAGE );
-        return;
-        }
+        { JOptionPane.showMessageDialog(this, "ใส่ตัวเลข 9 หลักเท่านั้น","Inane warning",JOptionPane.WARNING_MESSAGE );
+        return; }
+          
           
            try {   
             ResultSet rs = cn().executeQuery("SELECT * FROM user where u_id = " + input); 
-        //    ResultSet name1 = cn().executeQuery("SELECT u_name FROM user where u_id = " + input);
-                 
             if(!rs.next()){
              JOptionPane.showMessageDialog(this, "ไม่พบข้อมูลสมาชิก.","Inane warning",JOptionPane.WARNING_MESSAGE ); 
-             return ; 
-                }             
-        } catch (Exception ex) { System.out.println("excep error.");  return; }
+             return ; }   } catch (Exception ex) { System.out.println("excep error.");  return; }
             
           
-          
-             ResultSet rs2 = null; 
+           
         try {
-            rs2 = cn().executeQuery("SELECT * FROM user where u_id = " + input );
-        } catch (SQLException ex) {
-            Logger.getLogger(regisCourse.class.getName()).log(Level.SEVERE, null, ex);
-        }
-             
-        try {
+           ResultSet  rs2 = cn().executeQuery("SELECT * FROM user where u_id = " + input ); 
             while(rs2.next()) {
-                Name = rs2.getString("u_name");
-                BD  = rs2.getString("U_birth") ;
-                     
-                        age  = getToday().getYear() -  todate(BD).getYear() ;
-                        Age  = age+"";
-                //Age  = rs2.getString("u_age");
+                Name = rs2.getString("u_name"); 
+                 BD  = rs2.getString("U_birth") ; 
+                 age  = getToday().getYear() -  todate(BD).getYear() ;
+                 Age  = age+""; 
                 
                // age = Integer.parseInt(rs2.getString("u_age"));
                 
                 jLabel10.setText(Name);
                 
                 //-------------------------------------------------------//      
+                 
+                
+                boolean agestatus ;
                 
                 //ต้องคำนวณจาก DB
                 uid = input;
                 jLabel10.setText(Name);
-                if (age>=12){
+                if (age>=12){   
                     jLabel2.setText("5933001");
                     cid = "5933002";
                     jLabel3.setText("อายุเกิน 12 ปี");
@@ -298,33 +279,25 @@ public class regisCourse extends javax.swing.JFrame {
         } 
         
     try {   
-            ResultSet rs3 = cn().executeQuery("SELECT * FROM user where u_id = " + input); 
+           
         //    ResultSet name1 = cn().executeQuery("SELECT u_name FROM user where u_id = " + input);
              ResultSet rs4 = cn().executeQuery("SELECT u_id FROM register where u_id = " + input);
            if (rs4.next()){ 
                JOptionPane.showMessageDialog(this, " ชื่อผู้ใช้นี้เคยสมัครแล้ว ","Warning",JOptionPane.ERROR_MESSAGE ); }
-                            
+                           
            else if (!rs4.next()){  
-                 if (rs3.next()){
+                
+               ResultSet rs3 = cn().executeQuery("SELECT * FROM user where u_id = " + input); 
+               if (rs3.next()){
                     JOptionPane.showMessageDialog(this, "ยืนยันการสมัครเรียนคอร์สว่ายน้ำ ","Warning",JOptionPane.OK_CANCEL_OPTION );
-                    
                  DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                  Calendar cal = Calendar.getInstance(); 
                  String data = dateFormat.format(cal.getTime()); 
                  Sql("INSERT INTO `register` ( `U_ID`, `C_ID`, `R_Date_Time`) VALUES ( '"+uid+"','"+cid+"','"+data+"');");
                                 }
-           }
-        } catch (Exception ex) { System.out.println("excep error.");  return; }  
+           }  } catch (Exception ex) { System.out.println("excep error.");  return; }  
        
-          
-              
-          //   System.out.println("Save to DB : "+dateFormat.format(cal.getTime()));
-             
-  /*          C1 form1 = new C1();   
-            setVisible(false);
-            
-            //form2.setDefaultCloseOperation(C1.HIDE_ON_CLOSE); 
-            form1.setVisible(true);  */
+           
    
     }//GEN-LAST:event_jButton1MouseClicked
 
