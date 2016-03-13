@@ -54,6 +54,7 @@ public class regisCourse extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Angsana New", 1, 18)); // NOI18N
         jLabel1.setText("รหัสคอร์ส");
