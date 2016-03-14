@@ -31,11 +31,10 @@ public class C2 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<String>();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,7 +68,7 @@ public class C2 extends javax.swing.JFrame {
         jLabel4.setText("ชำระเงิน");
 
         jComboBox1.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cash", "Card" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cash", "Card" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -87,20 +86,6 @@ public class C2 extends javax.swing.JFrame {
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
-            }
-        });
-
-        jButton3.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
-        jButton3.setText("แก้ไขข้อมูล");
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
-            }
-        });
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
             }
         });
 
@@ -127,10 +112,8 @@ public class C2 extends javax.swing.JFrame {
                             .addComponent(jLabel7)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(175, 175, 175)
-                        .addComponent(jLabel4)
-                        .addGap(28, 28, 28)
-                        .addComponent(jButton3)))
-                .addContainerGap(44, Short.MAX_VALUE))
+                        .addComponent(jLabel4)))
+                .addContainerGap(46, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -142,10 +125,8 @@ public class C2 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jButton3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(11, 11, 11)
                 .addComponent(jLabel1)
@@ -222,31 +203,6 @@ public class C2 extends javax.swing.JFrame {
         form1.setVisible(true);
     }//GEN-LAST:event_jButton2MouseClicked
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        String input = userid;
-       
-            try {
-                ResultSet rs = cn2().executeQuery("SELECT * FROM user where u_id = " + input);
-
-                if(!rs.next()){
-                    JOptionPane.showMessageDialog(this, "No data found.","Inane warning",JOptionPane.WARNING_MESSAGE );
-                    return ;
-                }
-            } catch (Exception ex) { System.out.println("excep error.");  return; }
-
-            Profile Pro = new Profile();
-            Pro.setLinkObj(userid);
-            setVisible(false);
-            //form2.setDefaultCloseOperation(C1.HIDE_ON_CLOSE);
-            Pro.setVisible(true);
-               // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3MouseClicked
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    
     public static void main(String args[]) { 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -365,8 +321,7 @@ public class C2 extends javax.swing.JFrame {
    
             }
       
-            if(!member){
-                jButton3.setVisible(false);
+            if(!member){ 
                 //jButton4.setVisible(false);
             }
             
@@ -395,7 +350,6 @@ public class C2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

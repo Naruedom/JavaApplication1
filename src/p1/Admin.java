@@ -25,14 +25,12 @@ import static p1.cnn.cn3;
  */
 public class Admin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Admin
-     */
     public Admin() {
         initComponents(); 
         URL iconURL = getClass().getResource("pool.png"); 
         ImageIcon icon = new ImageIcon(iconURL);
          this.setIconImage(icon.getImage());
+         //JOptionPane.showMessageDialog( null, "dd"); 
     }
 
     /**
@@ -148,6 +146,11 @@ public class Admin extends javax.swing.JFrame {
                 jButton4MouseClicked(evt);
             }
         });
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("ประวัติสมัครคอร์ส");
 
@@ -235,7 +238,7 @@ public class Admin extends javax.swing.JFrame {
                     .addComponent(bt5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bt4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
@@ -336,12 +339,10 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        try {
-            
-          ResultSet  rs = cn().executeQuery("select * from register");
+        try { 
+          ResultSet  rs = cn3().executeQuery("select * from register");
           JTable table = new JTable(buildTableModel(rs));
-          JOptionPane.showMessageDialog(null, new JScrollPane(table));
-          
+          JOptionPane.showMessageDialog(null, new JScrollPane(table)); 
         } catch (SQLException ex) {
             Logger.getLogger(C1.class.getName()).log(Level.SEVERE, null, ex);
         } 
@@ -350,7 +351,7 @@ public class Admin extends javax.swing.JFrame {
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
          try {
             
-          ResultSet  rs = cn().executeQuery("select * from study");
+          ResultSet  rs = cn3().executeQuery("select * from study");
           JTable table = new JTable(buildTableModel(rs));
           JOptionPane.showMessageDialog(null, new JScrollPane(table));
           
@@ -358,6 +359,10 @@ public class Admin extends javax.swing.JFrame {
             Logger.getLogger(C1.class.getName()).log(Level.SEVERE, null, ex);
         } 
     }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments

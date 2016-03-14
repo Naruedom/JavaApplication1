@@ -289,7 +289,7 @@ public class regis extends javax.swing.JFrame {
                
            Sql("INSERT INTO  `user` (`U_id`, `U_name`, `U_address`, `U_tel`, `U_birth`, `U_type`) VALUES ('"+U_id.getText()+"', '"+U_name.getText()+"', '"+U_address.getText()+"', '"+U_tel.getText()+"', '"+datetext.getText()+"', 'ทั่วไป')");
            
-           System.out.println("INSERT INTO `db`.`user` (`U_id`, `U_name`, `U_address`, `U_tel`, `U_birth`, `U_type`) VALUES ('"+U_id.getText()+"', '"+U_name.getText()+"', '"+U_address.getText()+"', '"+U_tel.getText()+"', '"+datetext.getText()+"', 'ทั่วไป');");
+           //System.out.println("INSERT INTO `db`.`user` (`U_id`, `U_name`, `U_address`, `U_tel`, `U_birth`, `U_type`) VALUES ('"+U_id.getText()+"', '"+U_name.getText()+"', '"+U_address.getText()+"', '"+U_tel.getText()+"', '"+datetext.getText()+"', 'ทั่วไป');");
            
            JOptionPane.showMessageDialog(null,"เพิ่มข้อมูลเรียบร้อยแล้ว");
            this.dispose();

@@ -9,30 +9,39 @@ import java.sql.Statement;
 
 public class cnn  { 
     
-    static String host = "jdbc:mysql://localhost/db?useUnicode=true&characterEncoding=UTF-8"; 
+    static String host = "jdbc:mysql://192.168.1.44/db?useUnicode=true&characterEncoding=UTF-8"; 
    
      public static void main(String[] a) throws SQLException{
+         
+       //  Sql3("UPDATE `staff` SET `Sf_name` = '1', `Sf_address` = '1', `Sf_status` = '5', `sf_pass` = '1' WHERE  `Sf_id` = '1';");
+          
           try {  
-            ResultSet rs = cn().executeQuery("SELECT * FROM staff");  
+            ResultSet rs = cn3().executeQuery("SELECT * FROM staff");  
             while (rs.next()) {
                 String name = rs.getString("sf_name"); 
-                System.out.println(name ); 
+                System.out.println(name+"-" ); 
              } 
         } catch (Exception ex) { System.err.println("error conect."); }        
         }///////////////////////////////////////////////////////      
-     public static Statement  cn() throws SQLException {  //i 
-            Connection cnn = DriverManager.getConnection(host,"root",""); 
+         public static Statement  root() throws SQLException {  //root 
+            Connection cnn = DriverManager.getConnection(host,"test","1234"); 
             Statement stmt = cnn.createStatement(); 
             return stmt; 
         } 
      
-          public static Statement  cn2() throws SQLException { //c 
-            Connection cnn = DriverManager.getConnection(host,"cashier","1234"); 
+     public static Statement  cn() throws SQLException {  //information
+            Connection cnn = DriverManager.getConnection(host,"infor","1234"); 
+            Statement stmt = cnn.createStatement(); 
+            return stmt; 
+        } 
+     
+          public static Statement  cn2() throws SQLException { //cash 
+            Connection cnn = DriverManager.getConnection(host,"cash","1234"); 
             Statement stmt = cnn.createStatement(); 
             return stmt; 
         }  
-             public static Statement  cn3() throws SQLException { //a 
-            Connection cnn = DriverManager.getConnection(host,"adminswim","1234"); 
+             public static Statement  cn3() throws SQLException { //admin 
+            Connection cnn = DriverManager.getConnection(host,"admins","1234"); 
             Statement stmt = cnn.createStatement(); 
             return stmt; 
         } 
