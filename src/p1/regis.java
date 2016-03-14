@@ -72,18 +72,24 @@ public class regis extends javax.swing.JFrame {
         U_id = new javax.swing.JTextField();
         datetext = new datechooser.beans.DateChooserCombo();
         jButton3 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Angsana New", 1, 48)); // NOI18N
         jLabel3.setText("สมัครสมาชิก");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
         jLabel4.setText("เบอร์โทรศัพท์");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 192, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
         jLabel5.setText("ที่อยู่");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 238, -1, -1));
 
         U_tel.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
         U_tel.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -91,6 +97,7 @@ public class regis extends javax.swing.JFrame {
                 U_telFocusLost(evt);
             }
         });
+        getContentPane().add(U_tel, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 192, 200, -1));
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton2.setText("ยืนยัน");
@@ -104,6 +111,7 @@ public class regis extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 357, 114, 41));
 
         U_address.setColumns(20);
         U_address.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
@@ -115,11 +123,15 @@ public class regis extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(U_address);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 238, 200, 85));
+
         jLabel7.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
         jLabel7.setText("ชื่อ");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 116, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
         jLabel9.setText("รหัสนักศึกษา");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 73, -1, -1));
 
         U_name.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
         U_name.setToolTipText("");
@@ -128,15 +140,18 @@ public class regis extends javax.swing.JFrame {
                 U_nameFocusLost(evt);
             }
         });
+        getContentPane().add(U_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 112, 200, -1));
 
         jLabel8.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
         jLabel8.setText("วันเกิด");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 153, -1, -1));
 
         U_id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 U_idActionPerformed(evt);
             }
         });
+        getContentPane().add(U_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 75, 200, 33));
 
         datetext.setCurrentView(new datechooser.view.appearance.AppearancesList("Grey",
             new datechooser.view.appearance.ViewAppearance("custom",
@@ -189,6 +204,7 @@ public class regis extends javax.swing.JFrame {
     datetext.setLocale(new java.util.Locale("th", "", ""));
     datetext.setNavigateFont(new java.awt.Font("Serif", java.awt.Font.PLAIN, 16));
     datetext.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
+    getContentPane().add(datetext, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 161, 200, -1));
 
     jButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     jButton3.setText("ยกเลิก");
@@ -197,68 +213,15 @@ public class regis extends javax.swing.JFrame {
             jButton3ActionPerformed(evt);
         }
     });
+    getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(313, 357, -1, 41));
 
-    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-    getContentPane().setLayout(layout);
-    layout.setHorizontalGroup(
-        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(layout.createSequentialGroup()
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel7)
-                        .addComponent(jLabel8)
-                        .addComponent(jLabel9)
-                        .addComponent(jLabel4)
-                        .addComponent(jLabel5))
-                    .addGap(18, 18, 18)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(datetext, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(U_name, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(U_id, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(U_tel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(193, 193, 193)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel3))))
-            .addContainerGap(83, Short.MAX_VALUE))
-    );
-    layout.setVerticalGroup(
-        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(layout.createSequentialGroup()
-            .addComponent(jLabel3)
-            .addGap(18, 18, 18)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel9)
-                .addComponent(U_id, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE))
-            .addGap(4, 4, 4)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel7)
-                .addComponent(U_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                .addComponent(jLabel8)
-                .addComponent(datetext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(U_tel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jLabel4))
-            .addGap(11, 11, 11)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jLabel5))
-            .addGap(34, 34, 34)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(40, 40, 40))
-    );
+    jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/p1/img/bgin.jpg"))); // NOI18N
+    jLabel1.setText("jLabel1");
+    jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-450, -220, -1, -1));
+
+    getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 440));
 
     pack();
     setLocationRelativeTo(null);
@@ -416,12 +379,14 @@ public class regis extends javax.swing.JFrame {
     private datechooser.beans.DateChooserCombo datetext;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
