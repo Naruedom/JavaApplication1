@@ -300,7 +300,7 @@ public class Admin extends javax.swing.JFrame {
         try { 
           ResultSet  rs = cn3().executeQuery("select * from register");
           JTable table = new JTable(buildTableModel(rs));
-          JOptionPane.showMessageDialog(null, new JScrollPane(table)); 
+          JOptionPane.showMessageDialog(null , new JScrollPane(table)); 
         } catch (SQLException ex) {
             Logger.getLogger(C1.class.getName()).log(Level.SEVERE, null, ex);
         } 
