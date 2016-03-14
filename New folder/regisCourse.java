@@ -138,11 +138,11 @@ public class regisCourse extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/p1/img/bg5.jpg"))); // NOI18N
-        jLabel14.setText("jLabel14");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3570, -2160, -1, -1));
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/p1/img/bgin.jpg"))); // NOI18N
+        jLabel14.setText("jLabel1");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(-450, -220, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 360));
 
         pack();
         setLocationRelativeTo(null);
@@ -188,8 +188,7 @@ public class regisCourse extends javax.swing.JFrame {
             while(rs2.next()) {
                 Name = rs2.getString("u_name"); 
                  BD  = rs2.getString("U_birth") ; 
-                 age  =  getToday().getYear()-todate(BD).getYear() ;
-                 System.out.print(todate(BD).getYear()+"-"+getToday().getYear()+"="+age);
+                 age  = getToday().getYear() -  todate(BD).getYear() ;
                  Age  = age+""; 
                 
                // age = Integer.parseInt(rs2.getString("u_age"));

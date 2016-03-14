@@ -110,7 +110,6 @@ public class C1 extends javax.swing.JFrame {
 
         jCheckBox1.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
         jCheckBox1.setText("สมาชิก");
-        jCheckBox1.setContentAreaFilled(false);
         jCheckBox1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jCheckBox1StateChanged(evt);
@@ -125,11 +124,6 @@ public class C1 extends javax.swing.JFrame {
 
         jComboBox1.setFont(new java.awt.Font("Angsana New", 0, 24)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "เข้าใช้บริการสระนํ้า", "ค่าคอร์สเรียนว่ายนํ้า" }));
-        jComboBox1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jComboBox1MouseClicked(evt);
-            }
-        });
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -147,12 +141,11 @@ public class C1 extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/p1/img/bg5.jpg"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/p1/img/bgin.jpg"))); // NOI18N
         jLabel8.setText("jLabel8");
-        jLabel8.setPreferredSize(new java.awt.Dimension(338, 268));
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-130, 0, 600, 520));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-210, -40, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -6, 440, 390));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 390));
 
         pack();
         setLocationRelativeTo(null);
@@ -163,40 +156,9 @@ public class C1 extends javax.swing.JFrame {
         String input = jTextField1.getText();
         String input2= jTextField2.getText();
         String input3= jTextField3.getText();
-        combo = jComboBox1.getSelectedItem().toString();
-        if(Check){ //สมาชิก
-             System.out.print(combo);
-             
-              if (combo=="ค่าคอร์สเรียนว่ายนํ้า"){
-               System.out.print(combo);
-           ResultSet   rs4;
-         try {
-                rs4 = cn2().executeQuery("SELECT u_id FROM register where u_id = " + input);
-                  if(!rs4.next()){
-               JOptionPane.showMessageDialog(this, " คุณยังไม่ได้สมัครเรียนคอร์สว่ายน้ำ ","Warning",JOptionPane.WARNING_MESSAGE );
-                return;
-               }
-            } catch (SQLException ex) {
-               // Logger.getLogger(C1.class.getName()).log(Level.SEVERE, null, ex);
-                 }
         
-         try {
-                ResultSet ChPayAgainC =cn2().executeQuery("SELECT b_id FROM bill where (b_name = 'ค่าคอร์สเรียนว่ายน้ำ') and u_id = " + input);
-                if(ChPayAgainC.next()){
-               JOptionPane.showMessageDialog(this, " คุณได้สมัครเรียนคอร์สว่ายน้ำและชำระเงินเรียบร้อยแล้ว ","Warning",JOptionPane.WARNING_MESSAGE );
-               return;
-               }
-                
-                
-            } catch (SQLException ex) {
-                Logger.getLogger(C1.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        if(Check){ //สมาชิก
             
-            
-           } 
-              
-              
-              
          if(input.equals("")  ){
           JOptionPane.showMessageDialog(this, "กรุณากรอก ID ","Inane warning",JOptionPane.WARNING_MESSAGE ); 
           return;
@@ -217,9 +179,19 @@ public class C1 extends javax.swing.JFrame {
                 }  
         } catch (Exception ex) { System.out.println("excep error.");  return; }
            
-           
-           ///////
-          
+           ResultSet   rs4;
+            try {
+                rs4 = cn2().executeQuery("SELECT u_id FROM register where u_id = " + input);
+                  if(!rs4.next()){
+               JOptionPane.showMessageDialog(this, " คุณยังไม่ได้สมัครเรียนคอร์สว่ายน้ำ ","Warning",JOptionPane.WARNING_MESSAGE );
+                return;
+               }
+            } catch (SQLException ex) {
+               // Logger.getLogger(C1.class.getName()).log(Level.SEVERE, null, ex);
+               
+            }
+        
+            
             
       
             
@@ -306,7 +278,7 @@ public class C1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox1StateChanged
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        
+        // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
@@ -316,10 +288,6 @@ public class C1 extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jComboBox1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseClicked
-        
-    }//GEN-LAST:event_jComboBox1MouseClicked
 
     public static void main(String args[]) {
         try {
@@ -392,7 +360,6 @@ public class C1 extends javax.swing.JFrame {
          jComboBox1.enable();
     }
       boolean Check;
-      String combo;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;

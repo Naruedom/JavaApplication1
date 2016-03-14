@@ -117,13 +117,8 @@ public class edituser extends javax.swing.JFrame {
           JOptionPane.showMessageDialog(this, "error","Inane warning",JOptionPane.WARNING_MESSAGE ); 
           return;
            //String jButton1=input1.getText();
-          //this.dispose();//ซ่อนฟอร์ม
-      
-         }
-        {
-            System.out.print("error#");
-        
-        }
+          //this.dispose();//ซ่อนฟอร์ม 
+         } 
            
             try {
                 ResultSet rs = cn2().executeQuery("SELECT * FROM user where u_id = " + input1);
