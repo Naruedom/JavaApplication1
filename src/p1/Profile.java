@@ -25,54 +25,22 @@ public class Profile extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jTextFieldname = new javax.swing.JTextField();
-        jTextFieldtel = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        datetext = new datechooser.beans.DateChooserCombo();
         jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jTextFieldtel = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jTextFieldname = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        datetext = new datechooser.beans.DateChooserCombo();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton1.setText("Save");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 315, 180, 66));
-
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton2.setText("Cancel");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(208, 315, 339, 66));
-
-        jTextFieldname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldnameActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldname, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 86, 199, 34));
-
-        jTextFieldtel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldtelActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextFieldtel, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 251, 199, 34));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setText("สมาชิก ");
@@ -86,9 +54,49 @@ public class Profile extends javax.swing.JFrame {
         jLabel5.setText("ชื่อ          ");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 91, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
+        jLabel8.setText("วันเกิด");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 150, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setText("ข้อมูลสมาชิก");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        jTextFieldtel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldtelActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldtel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 199, 34));
+
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ทั่วไป", "รายปี" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 196, 199, -1));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 199, -1));
+
+        jTextFieldname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldnameActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldname, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 199, 34));
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton1.setText("Save");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 180, 40));
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton2.setText("Cancel");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 100, 40));
 
         datetext.setCurrentView(new datechooser.view.appearance.AppearancesList("Grey",
             new datechooser.view.appearance.ViewAppearance("custom",
@@ -141,15 +149,7 @@ public class Profile extends javax.swing.JFrame {
     datetext.setLocale(new java.util.Locale("th", "", ""));
     datetext.setNavigateFont(new java.awt.Font("Serif", java.awt.Font.PLAIN, 16));
     datetext.setBehavior(datechooser.model.multiple.MultyModelBehavior.SELECT_SINGLE);
-    getContentPane().add(datetext, new org.netbeans.lib.awtextra.AbsoluteConstraints(208, 158, 200, -1));
-
-    jLabel8.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
-    jLabel8.setText("วันเกิด");
-    getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 150, -1, -1));
-
-    jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-    jLabel1.setText("ข้อมูลสมาชิก");
-    getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+    getContentPane().add(datetext, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 200, 30));
 
     jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
