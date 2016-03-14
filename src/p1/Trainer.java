@@ -310,7 +310,7 @@ public class Trainer extends javax.swing.JFrame {
 
     private void bt4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt4ActionPerformed
         edituser gui = new edituser();
-        setVisible(false);
+        setVisible(false); 
         gui.setVisible(true);
     }//GEN-LAST:event_bt4ActionPerformed
  
