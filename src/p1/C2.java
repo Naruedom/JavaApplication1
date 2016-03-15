@@ -135,9 +135,10 @@ public class C2 extends javax.swing.JFrame {
               
             // System.out.println("Save to DB : "+dateFormat.format(cal.getTime()));
                System.out.println("Save to DB : "+data);
-            C1 form1 = new C1();   
-            setVisible(false);
-            JOptionPane.showMessageDialog(this, 
+            //C1 form1 = new C1();   
+           // setVisible(false);
+            
+           JOptionPane.showMessageDialog(this, 
                                 "\nชื่อ       : "+name
                             + "\n\nอายุ      : "+Age+ " ปี"
                             + "\n\n"+BName
@@ -146,8 +147,9 @@ public class C2 extends javax.swing.JFrame {
                             + "\n\nชำระเงินโดย: "+type 
                             + "\n\n\nพนักงานชำระบิล :"+Emp
                             + "\n","Bill",JOptionPane.NO_OPTION );
+             this.dispose(); 
             //form2.setDefaultCloseOperation(C1.HIDE_ON_CLOSE); 
-            form1.setVisible(true);
+            //form1.setVisible(true);
              
 
          

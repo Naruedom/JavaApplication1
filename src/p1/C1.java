@@ -230,7 +230,7 @@ public class C1 extends javax.swing.JFrame {
                 Logger.getLogger(C1.class.getName()).log(Level.SEVERE, null, ex);
             }
             setVisible(false);
-            //form2.setDefaultCloseOperation(C1.HIDE_ON_CLOSE); 
+            form2.setDefaultCloseOperation(C1.HIDE_ON_CLOSE); 
             form2.setVisible(true);    
         
          }else{ //ถ้าไม่ใช่สมาชิก

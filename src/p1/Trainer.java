@@ -27,7 +27,6 @@ public class Trainer extends javax.swing.JFrame {
     private void initComponents() {
 
         bt3 = new javax.swing.JButton();
-        bt2 = new javax.swing.JButton();
         bt1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -41,15 +40,17 @@ public class Trainer extends javax.swing.JFrame {
         bt4 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        bt2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        bt3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/p1/img/schedule.png"))); // NOI18N
+        bt3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/p1/img/bill2.png"))); // NOI18N
         bt3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         bt3.setBorderPainted(false);
+        bt3.setContentAreaFilled(false);
         bt3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt3MouseClicked(evt);
@@ -57,19 +58,10 @@ public class Trainer extends javax.swing.JFrame {
         });
         getContentPane().add(bt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 265, 107, 102));
 
-        bt2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/p1/img/regisC.png"))); // NOI18N
-        bt2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        bt2.setBorderPainted(false);
-        bt2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt2MouseClicked(evt);
-            }
-        });
-        getContentPane().add(bt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, -1, 102));
-
-        bt1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/p1/img/addMember.png"))); // NOI18N
+        bt1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/p1/img/addm.png"))); // NOI18N
         bt1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         bt1.setBorderPainted(false);
+        bt1.setContentAreaFilled(false);
         bt1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt1MouseClicked(evt);
@@ -110,8 +102,9 @@ public class Trainer extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(423, 407, -1, -1));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/p1/schedule.png"))); // NOI18N
-        jButton2.setText("jButton2");
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/p1/img/bill2.png"))); // NOI18N
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
@@ -129,8 +122,9 @@ public class Trainer extends javax.swing.JFrame {
         jLabel6.setText("รายชื่อสมัครเรียนคอร์ส");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 379, -1, -1));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/p1/schedule.png"))); // NOI18N
-        jButton3.setText("jButton3");
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/p1/img/bill2.png"))); // NOI18N
+        jButton3.setBorderPainted(false);
+        jButton3.setContentAreaFilled(false);
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton3MouseClicked(evt);
@@ -138,9 +132,10 @@ public class Trainer extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 265, 97, 96));
 
-        bt4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/p1/img/addMember.png"))); // NOI18N
+        bt4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/p1/img/useredit.png"))); // NOI18N
         bt4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         bt4.setBorderPainted(false);
+        bt4.setContentAreaFilled(false);
         bt4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt4MouseClicked(evt);
@@ -163,11 +158,22 @@ public class Trainer extends javax.swing.JFrame {
         jLabel7.setText("แก้ไขข้อมูล");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, -1, -1));
 
+        bt2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/p1/img/file.png"))); // NOI18N
+        bt2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bt2.setBorderPainted(false);
+        bt2.setContentAreaFilled(false);
+        bt2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(bt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, -1, 120));
+
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/p1/img/bg2.jpg"))); // NOI18N
         jLabel8.setText("jLabel8");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-390, -400, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -310, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 430));
 
