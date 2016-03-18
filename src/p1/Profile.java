@@ -188,12 +188,13 @@ public class Profile extends javax.swing.JFrame {
             Logger.getLogger(Profile.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-            C2 form1 = new C2(); 
+            Trainer form1 = new Trainer();
             JOptionPane.showMessageDialog(null,
 		"ข้อมูลถูกแก้ไขแล้ว");
+            form1.setVisible(true);   
             this.dispose();
             //setVisible(false);
-           // form1.setVisible(true);   
+           
             
     }//GEN-LAST:event_jButton1MouseClicked
 

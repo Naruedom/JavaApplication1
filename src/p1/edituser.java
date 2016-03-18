@@ -112,7 +112,7 @@ public class edituser extends javax.swing.JFrame {
             Profile Pro = new Profile();
             Pro.setLinkObj(input1.getText());
             setVisible(false);
-            //form2.setDefaultCloseOperation(C1.HIDE_ON_CLOSE);
+            Pro.setDefaultCloseOperation(C1.HIDE_ON_CLOSE);
             Pro.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
